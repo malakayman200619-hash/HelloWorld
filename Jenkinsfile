@@ -5,7 +5,10 @@ pipeline {
         stage('Compile') {
             steps {
                 echo 'Compiling...'
-                bat 'javac -d . HelloWorld.java'
+                bat 'dir'
+                bat 'type HelloWorld.java'
+                bat 'javac -verbose -d . HelloWorld.java'
+                bat 'dir /s /b *.class'
             }
         }
 
