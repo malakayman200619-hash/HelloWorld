@@ -5,14 +5,14 @@ pipeline {
         stage('Compile') {
             steps {
                 echo 'Compiling...'
-                bat 'javac HelloWorld.java'
+                bat 'javac -d . HelloWorld.java'
             }
         }
 
         stage('Run') {
             steps {
                 echo 'Running...'
-                bat 'java HelloWorld'
+                bat 'java -cp . HelloWorld'
             }
         }
     }
